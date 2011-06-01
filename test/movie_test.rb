@@ -34,7 +34,11 @@ class MovieTest < Test::Unit::TestCase
     should "have a poster_url" do
       assert_match /http:\/\/ia.media-imdb.com\/images\/.*/, @movie.poster_url
     end
-  
+
+    should "have a icon with exact size" do
+      assert_match /http:\/\/ia.media-imdb.com\/images\/.*/, @movie.icon(128)
+    end
+
     should "have a release date" do
       assert_equal DateTime.parse("2007-06-29"), @movie.release_date
     end
@@ -45,7 +49,7 @@ class MovieTest < Test::Unit::TestCase
   
     should "have trailers" do
       assert_equal Hash, @movie.trailers.class
-      assert_equal 2, @movie.trailers.keys.size
+      assert_equal 1, @movie.trailers.keys.size
       assert_equal "http://www.totaleclips.com/Player/Bounce.aspx?eclipid=e27826&bitrateid=461&vendorid=102&type=.mp4", @movie.trailers[@movie.trailers.keys.first]
     end
   

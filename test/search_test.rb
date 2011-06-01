@@ -53,7 +53,7 @@ class SearchTest < Test::Unit::TestCase
       
       should "be an Array of Hashes" do
         assert_equal Array, @movies.class
-        assert_equal Hash, @movies.first.class
+        assert_equal ImdbParty::SearchResult, @movies.first.class
       end
     end
   
@@ -64,7 +64,7 @@ class SearchTest < Test::Unit::TestCase
       
       should "be an Array of Hashes" do
         assert_equal Array, @shows.class
-        assert_equal Hash, @shows.first.class
+        assert_equal ImdbParty::SearchResult, @shows.first.class
       end
     end
   
@@ -82,7 +82,7 @@ class SearchTest < Test::Unit::TestCase
       
       should "be an Array of Hashes" do
         assert_equal Array, @shows.class
-        assert_equal Hash, @shows.first.class
+        assert_equal ImdbParty::SearchResult, @shows.first.class
       end
     end
 

@@ -34,5 +34,9 @@ module ImdbParty
       end
 
     end
+
+    def icon(size)
+      SearchResult.new({:poster_url => @poster_url}).icon(size)
+    end
   end
 end

@@ -41,7 +41,7 @@ module ImdbParty
             next unless r["tconst"] && r["title"]
             h = {:title => r["title"], :year => r["year"], :imdb_id => r["tconst"], :kind => r["type"]}
             h.merge!(:poster_url => r["image"]["url"]) if r["image"] && r["image"]["url"]
-            movie_results << h
+            movie_results << SearchResult.new(h)
           end
         end
       end
@@ -60,14 +60,14 @@ module ImdbParty
       url = build_url('/chart/top')
 
       results = self.class.get(url).parsed_response
-      results["data"]["list"]["list"].map { |r| {:title => r["title"], :imdb_id => r["tconst"], :year => r["year"], :poster_url => (r["image"] ? r["image"]["url"] : nil)} }
+      results["data"]["list"]["list"].map { |r| SearchResult.new({:title => r["title"], :imdb_id => r["tconst"], :year => r["year"], :poster_url => (r["image"] ? r["image"]["url"] : nil)}) }
     end
 
     def popular_shows
       url = build_url('/chart/tv')
 
       results = self.class.get(url).parsed_response
-      results["data"]["list"].map { |r| {:title => r["title"], :imdb_id => r["tconst"], :year => r["year"], :poster_url => (r["image"] ? r["image"]["url"] : nil)} }
+      results["data"]["list"].map { |r| SearchResult.new({:title => r["title"], :imdb_id => r["tconst"], :year => r["year"], :poster_url => (r["image"] ? r["image"]["url"] : nil)}) }
     end
     
   end
