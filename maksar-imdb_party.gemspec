@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{maksar-imdb_party}
-  s.version = "0.6.1"
+  s.version = "0.6.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jon Maddox"]
@@ -22,12 +22,12 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
-    "imdb_party.gemspec",
     "lib/imdb_party.rb",
     "lib/imdb_party/httparty_icebox.rb",
     "lib/imdb_party/imdb.rb",
     "lib/imdb_party/movie.rb",
     "lib/imdb_party/person.rb",
+    "maksar-imdb_party.gemspec",
     "test/movie_test.rb",
     "test/person_test.rb",
     "test/search_test.rb",
