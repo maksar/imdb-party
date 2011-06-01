@@ -4,7 +4,7 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "imdb_party"
+    gem.name = "maksar-imdb_party"
     gem.summary = %Q{IMDB client using the IMDB API that their iPhone app uses}
     gem.description = %Q{IMDB client using the IMDB API that their iPhone app uses}
     gem.email = "jon@mustacheinc.com"
